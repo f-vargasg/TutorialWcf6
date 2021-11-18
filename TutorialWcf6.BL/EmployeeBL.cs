@@ -32,11 +32,11 @@ namespace TutorialWcf6.BL
             return employee;
         }
 
-        public void Insertar(Employee employee)
+        public void SaveEmployee(Employee employee)
         {
             try
             {
-                this.Insertar(employee);
+                this.employeeDL.SaveEmployee(employee);
             }
             catch (Exception)
             {

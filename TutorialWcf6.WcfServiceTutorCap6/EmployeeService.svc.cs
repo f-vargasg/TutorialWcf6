@@ -24,7 +24,7 @@ namespace TutorialWcf6.WcfServiceTutorCap6
         public void SaveEmployee(Employee employee)
         {
             EmployeeBL employeeBL = new EmployeeBL();
-            employeeBL.Insertar(employee);
+            employeeBL.SaveEmployee(employee);
         }
     }
 }

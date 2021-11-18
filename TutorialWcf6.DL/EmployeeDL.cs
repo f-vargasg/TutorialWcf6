@@ -39,7 +39,7 @@ namespace TutorialWcf6.DL
             return res;
         }
 
-        public void Insertar(Employee pParams)
+        public void SaveEmployee(Employee pParams)
         {
             try
             {
