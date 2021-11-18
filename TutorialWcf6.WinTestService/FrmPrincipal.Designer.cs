@@ -40,6 +40,7 @@ namespace TutorialWcf6.WinTestService
             this.butGetEmployee = new System.Windows.Forms.Button();
             this.butSaveEmployee = new System.Windows.Forms.Button();
             this.dtpDateOfBirth = new System.Windows.Forms.DateTimePicker();
+            this.lblMessage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -111,6 +112,7 @@ namespace TutorialWcf6.WinTestService
             this.butGetEmployee.TabIndex = 8;
             this.butGetEmployee.Text = "Get Employee";
             this.butGetEmployee.UseVisualStyleBackColor = true;
+            this.butGetEmployee.Click += new System.EventHandler(this.butGetEmployee_Click);
             // 
             // butSaveEmployee
             // 
@@ -120,19 +122,30 @@ namespace TutorialWcf6.WinTestService
             this.butSaveEmployee.TabIndex = 9;
             this.butSaveEmployee.Text = "Save Employee";
             this.butSaveEmployee.UseVisualStyleBackColor = true;
+            this.butSaveEmployee.Click += new System.EventHandler(this.butSaveEmployee_Click);
             // 
-            // dateTimePicker1
+            // dtpDateOfBirth
             // 
             this.dtpDateOfBirth.Location = new System.Drawing.Point(177, 131);
-            this.dtpDateOfBirth.Name = "dateTimePicker1";
+            this.dtpDateOfBirth.Name = "dtpDateOfBirth";
             this.dtpDateOfBirth.Size = new System.Drawing.Size(150, 22);
             this.dtpDateOfBirth.TabIndex = 10;
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.Location = new System.Drawing.Point(-1, 317);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(45, 16);
+            this.lblMessage.TabIndex = 11;
+            this.lblMessage.Text = "label5";
             // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 333);
+            this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.dtpDateOfBirth);
             this.Controls.Add(this.butSaveEmployee);
             this.Controls.Add(this.butGetEmployee);
@@ -165,6 +178,7 @@ namespace TutorialWcf6.WinTestService
         private System.Windows.Forms.Button butGetEmployee;
         private System.Windows.Forms.Button butSaveEmployee;
         private System.Windows.Forms.DateTimePicker dtpDateOfBirth;
+        private System.Windows.Forms.Label lblMessage;
     }
 }
 

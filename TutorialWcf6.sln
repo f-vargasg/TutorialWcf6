@@ -12,6 +12,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutorialWcf6.BL", "TutorialWcf6.BL\TutorialWcf6.BL.csproj", "{1AB8B774-F0BB-464D-B41E-FCB885A975E6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutorialWcf6.WinTestService", "TutorialWcf6.WinTestService\TutorialWcf6.WinTestService.csproj", "{F46A30A9-DF49-44E5-A2D9-EEA394E3CC11}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2F3CFB91-E822-4D4C-9C31-18DE25C17E2D} = {2F3CFB91-E822-4D4C-9C31-18DE25C17E2D}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
