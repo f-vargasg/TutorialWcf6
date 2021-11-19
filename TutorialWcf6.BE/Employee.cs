@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,12 +13,27 @@ namespace TutorialWcf6.BE
     /// de la clase (ver atributos privados, en el cliente, el orden y otros)
     /// Falta averiguar para que sirve la anotacion Namespace
     /// </summary>
-     public class Employee
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Gender { get; set; }
-        public DateTime DateOfBirth { get; set; }
 
+    [KnownType(typeof(FullTimeEmployee))]
+    [KnownType(typeof(PartTimeEmployee))]
+    public class Employee
+    {
+        [DataMember(Order = 1)]
+        public int Id { get; set; }
+        [DataMember(Order = 2)]
+        public string Name { get; set; }
+        [DataMember(Order = 3)]
+        public string Gender { get; set; }
+        [DataMember(Order = 4)]
+        public DateTime DateOfBirth { get; set; }
+        [DataMember(Order = 5)]
+        public EmployeeType Type { get; set; }
+
+    }
+
+    public enum EmployeeType
+    {
+        FullTimeEmployee = 1,
+        PartTimeEmployee = 2
     }
 }
