@@ -15,44 +15,54 @@ namespace TutorialWcf6.DL
         public Employee GetEmployee(int id)
         {
             Employee res = null;
-            using (DbConnection connection = database.CreateOpenConnection())
+            try
             {
-                using (DbCommand command = database.CreateCommand("SELECT * FROM TBLEMPLOYEE", connection))
+                using (DbConnection connection = database.CreateOpenConnection())
                 {
-                    using (IDataReader reader = command.ExecuteReader())
+                    using (DbCommand command = database.CreateCommand("SELECT * FROM TBLEMPLOYEE WHERE ID = " + Convert.ToString(id), connection))
                     {
-                        while (reader.Read())
+                        using (IDataReader reader = command.ExecuteReader())
                         {
-                            Console.WriteLine(reader["NAME"]);
-                            if ((EmployeeType)reader["EMPLOYEETYPE"] == EmployeeType.FullTimeEmployee)
+                            while (reader.Read())
                             {
-                                res = new FullTimeEmployee()
+                                Console.WriteLine(reader["NAME"]);
+                                int employeeType = Convert.ToInt16(reader["EMPLOYEETYPE"]);
+                                if ((EmployeeType)employeeType == EmployeeType.FullTimeEmployee)
                                 {
-                                    Id = Convert.ToInt32(reader["ID"]),
-                                    Name = Convert.ToString(reader["NAME"]),
-                                    Gender = Convert.ToString(reader["GENDER"]),
-                                    DateOfBirth = Convert.ToDateTime(reader["DATEOFBIRTH"]),
-                                    Type = EmployeeType.FullTimeEmployee,
-                                    AnnualSalary = Convert.ToInt32(reader["ANNUALSALARY"])
-                                };
-                            }
-                            else
-                            {
-                                res = new PartTimeEmployee()
+                                    res = new FullTimeEmployee()
+                                    {
+                                        Id = Convert.ToInt32(reader["ID"]),
+                                        Name = Convert.ToString(reader["NAME"]),
+                                        Gender = Convert.ToString(reader["GENDER"]),
+                                        DateOfBirth = Convert.ToDateTime(reader["DATEOFBIRTH"]),
+                                        Type = EmployeeType.FullTimeEmployee,
+                                        AnnualSalary = Convert.ToInt32(reader["ANNUALSALARY"])
+                                    };
+                                }
+                                else
                                 {
-                                    Id = Convert.ToInt32(reader["ID"]),
-                                    Name = Convert.ToString(reader["NAME"]),
-                                    Gender = Convert.ToString(reader["GENDER"]),
-                                    DateOfBirth = Convert.ToDateTime(reader["DATEOFBIRTH"]),
-                                    Type = EmployeeType.PartTimeEmployee,
-                                    HourlyPay = Convert.ToInt32(reader["HOURLYPAY"]),
-                                    HoursWorked = Convert.ToInt32(reader["HOURSWORKED"])
-                                };
+                                    res = new PartTimeEmployee()
+                                    {
+                                        Id = Convert.ToInt32(reader["ID"]),
+                                        Name = Convert.ToString(reader["NAME"]),
+                                        Gender = Convert.ToString(reader["GENDER"]),
+                                        DateOfBirth = Convert.ToDateTime(reader["DATEOFBIRTH"]),
+                                        Type = EmployeeType.PartTimeEmployee,
+                                        HourlyPay = Convert.ToInt32(reader["HOURLYPAY"]),
+                                        HoursWorked = Convert.ToInt32(reader["HOURSWORKED"])
+                                    };
+                                }
                             }
                         }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
             return res;
         }
 

@@ -57,7 +57,7 @@ namespace TutorialWcf6.WinTestService
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(84, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 16);
+            this.label1.Size = new System.Drawing.Size(28, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
             // 
@@ -65,15 +65,15 @@ namespace TutorialWcf6.WinTestService
             // 
             this.txtID.Location = new System.Drawing.Point(225, 20);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(290, 22);
+            this.txtID.Size = new System.Drawing.Size(290, 26);
             this.txtID.TabIndex = 1;
             // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(225, 48);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(290, 22);
-            this.txtName.TabIndex = 3;
+            this.txtName.Size = new System.Drawing.Size(290, 26);
+            this.txtName.TabIndex = 2;
             // 
             // label2
             // 
@@ -81,7 +81,7 @@ namespace TutorialWcf6.WinTestService
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(84, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 16);
+            this.label2.Size = new System.Drawing.Size(63, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Name:";
             // 
@@ -91,7 +91,7 @@ namespace TutorialWcf6.WinTestService
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(84, 107);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 16);
+            this.label3.Size = new System.Drawing.Size(124, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "Date of Birth:";
             // 
@@ -99,8 +99,8 @@ namespace TutorialWcf6.WinTestService
             // 
             this.txtGender.Location = new System.Drawing.Point(225, 76);
             this.txtGender.Name = "txtGender";
-            this.txtGender.Size = new System.Drawing.Size(290, 22);
-            this.txtGender.TabIndex = 5;
+            this.txtGender.Size = new System.Drawing.Size(290, 26);
+            this.txtGender.TabIndex = 3;
             // 
             // label4
             // 
@@ -108,7 +108,7 @@ namespace TutorialWcf6.WinTestService
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(84, 79);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 16);
+            this.label4.Size = new System.Drawing.Size(76, 20);
             this.label4.TabIndex = 4;
             this.label4.Text = "Gender:";
             // 
@@ -117,7 +117,7 @@ namespace TutorialWcf6.WinTestService
             this.butGetEmployee.Location = new System.Drawing.Point(127, 287);
             this.butGetEmployee.Name = "butGetEmployee";
             this.butGetEmployee.Size = new System.Drawing.Size(169, 58);
-            this.butGetEmployee.TabIndex = 8;
+            this.butGetEmployee.TabIndex = 9;
             this.butGetEmployee.Text = "Get Employee";
             this.butGetEmployee.UseVisualStyleBackColor = true;
             this.butGetEmployee.Click += new System.EventHandler(this.butGetEmployee_Click);
@@ -127,7 +127,7 @@ namespace TutorialWcf6.WinTestService
             this.butSaveEmployee.Location = new System.Drawing.Point(336, 287);
             this.butSaveEmployee.Name = "butSaveEmployee";
             this.butSaveEmployee.Size = new System.Drawing.Size(169, 58);
-            this.butSaveEmployee.TabIndex = 9;
+            this.butSaveEmployee.TabIndex = 10;
             this.butSaveEmployee.Text = "Save Employee";
             this.butSaveEmployee.UseVisualStyleBackColor = true;
             this.butSaveEmployee.Click += new System.EventHandler(this.butSaveEmployee_Click);
@@ -136,15 +136,15 @@ namespace TutorialWcf6.WinTestService
             // 
             this.dtpDateOfBirth.Location = new System.Drawing.Point(225, 104);
             this.dtpDateOfBirth.Name = "dtpDateOfBirth";
-            this.dtpDateOfBirth.Size = new System.Drawing.Size(150, 22);
-            this.dtpDateOfBirth.TabIndex = 10;
+            this.dtpDateOfBirth.Size = new System.Drawing.Size(150, 26);
+            this.dtpDateOfBirth.TabIndex = 4;
             // 
             // lblMessage
             // 
             this.lblMessage.AutoSize = true;
             this.lblMessage.Location = new System.Drawing.Point(-1, 342);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(45, 16);
+            this.lblMessage.Size = new System.Drawing.Size(53, 20);
             this.lblMessage.TabIndex = 11;
             this.lblMessage.Text = "label5";
             // 
@@ -154,8 +154,8 @@ namespace TutorialWcf6.WinTestService
             this.cmbEmployeeType.FormattingEnabled = true;
             this.cmbEmployeeType.Location = new System.Drawing.Point(225, 132);
             this.cmbEmployeeType.Name = "cmbEmployeeType";
-            this.cmbEmployeeType.Size = new System.Drawing.Size(290, 24);
-            this.cmbEmployeeType.TabIndex = 12;
+            this.cmbEmployeeType.Size = new System.Drawing.Size(290, 28);
+            this.cmbEmployeeType.TabIndex = 5;
             this.cmbEmployeeType.SelectedIndexChanged += new System.EventHandler(this.cmbEmployeeType_SelectedIndexChanged);
             // 
             // label5
@@ -164,7 +164,7 @@ namespace TutorialWcf6.WinTestService
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(82, 135);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(122, 16);
+            this.label5.Size = new System.Drawing.Size(142, 20);
             this.label5.TabIndex = 13;
             this.label5.Text = "Employee Type:";
             // 
@@ -172,8 +172,8 @@ namespace TutorialWcf6.WinTestService
             // 
             this.txtAnualSalary.Location = new System.Drawing.Point(225, 162);
             this.txtAnualSalary.Name = "txtAnualSalary";
-            this.txtAnualSalary.Size = new System.Drawing.Size(290, 22);
-            this.txtAnualSalary.TabIndex = 15;
+            this.txtAnualSalary.Size = new System.Drawing.Size(290, 26);
+            this.txtAnualSalary.TabIndex = 6;
             // 
             // label6
             // 
@@ -181,7 +181,7 @@ namespace TutorialWcf6.WinTestService
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(84, 165);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(108, 16);
+            this.label6.Size = new System.Drawing.Size(131, 20);
             this.label6.TabIndex = 14;
             this.label6.Text = "Annual Salary:";
             // 
@@ -189,8 +189,8 @@ namespace TutorialWcf6.WinTestService
             // 
             this.txtHourlyPay.Location = new System.Drawing.Point(225, 192);
             this.txtHourlyPay.Name = "txtHourlyPay";
-            this.txtHourlyPay.Size = new System.Drawing.Size(290, 22);
-            this.txtHourlyPay.TabIndex = 17;
+            this.txtHourlyPay.Size = new System.Drawing.Size(290, 26);
+            this.txtHourlyPay.TabIndex = 7;
             // 
             // label7
             // 
@@ -198,7 +198,7 @@ namespace TutorialWcf6.WinTestService
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(84, 195);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 16);
+            this.label7.Size = new System.Drawing.Size(107, 20);
             this.label7.TabIndex = 16;
             this.label7.Text = "Hourly Pay:";
             // 
@@ -206,8 +206,8 @@ namespace TutorialWcf6.WinTestService
             // 
             this.txtHoursWorked.Location = new System.Drawing.Point(225, 220);
             this.txtHoursWorked.Name = "txtHoursWorked";
-            this.txtHoursWorked.Size = new System.Drawing.Size(290, 22);
-            this.txtHoursWorked.TabIndex = 19;
+            this.txtHoursWorked.Size = new System.Drawing.Size(290, 26);
+            this.txtHoursWorked.TabIndex = 8;
             // 
             // label8
             // 
@@ -215,13 +215,13 @@ namespace TutorialWcf6.WinTestService
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(84, 223);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(111, 16);
+            this.label8.Size = new System.Drawing.Size(135, 20);
             this.label8.TabIndex = 18;
             this.label8.Text = "Hours Worked:";
             // 
             // FrmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(655, 367);
             this.Controls.Add(this.txtHoursWorked);
