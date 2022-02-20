@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TutorialWcf6.WinTestService.EmployeeServiceRef;
+using TutorialWcf6.WinTestService.ServiceReference2;
 
 namespace TutorialWcf6.WinTestService
 {
@@ -57,23 +57,30 @@ namespace TutorialWcf6.WinTestService
 
                 Employee employee = client.GetEmployee(Convert.ToInt32(txtID.Text));
 
-                txtName.Text = employee.Name;
-                txtGender.Text = employee.Gender;
-                dtpDateOfBirth.Value = employee.DateOfBirth;
-
-                cmbEmployeeType.SelectedIndex = (int)(employee.Type) - 1;
-
-                if (employee.Type == EmployeeType.FullTimeEmployee)
+                if (employee != null)
                 {
-                    txtAnualSalary.Text = ((FullTimeEmployee)employee).AnnualSalary.ToString();
+                    txtName.Text = employee.Name;
+                    txtGender.Text = employee.Gender;
+                    dtpDateOfBirth.Value = employee.DateOfBirth;
+
+                    cmbEmployeeType.SelectedIndex = (int)(employee.Type) - 1;
+
+                    if (employee.Type == EmployeeType.FullTimeEmployee)
+                    {
+                        txtAnualSalary.Text = ((FullTimeEmployee)employee).AnnualSalary.ToString();
+                    }
+                    else
+                    {
+                        txtHourlyPay.Text = ((PartTimeEmployee)employee).HourlyPay.ToString();
+                        txtHoursWorked.Text = ((PartTimeEmployee)employee).HoursWorked.ToString();
+                    }
+
+                    lblMessage.Text = "Employee retrieved";
                 }
                 else
                 {
-                    txtHourlyPay.Text = ((PartTimeEmployee)employee).HourlyPay.ToString();
-                    txtHoursWorked.Text = ((PartTimeEmployee)employee).HoursWorked.ToString();
+                    MessageBox.Show("Registro: "  + txtID.Text + " no encontrado!!!!");
                 }
-
-                lblMessage.Text = "Employee retrieved";
             }
             catch (Exception ex)
             {
@@ -84,39 +91,47 @@ namespace TutorialWcf6.WinTestService
 
         private void butSaveEmployee_Click(object sender, EventArgs e)
         {
-            EmployeeServiceClient client = new EmployeeServiceClient();
-
-            Employee employee = null;
-
-            if (cmbEmployeeType.SelectedIndex == 0)
+            try
             {
-                employee = new FullTimeEmployee()
+                EmployeeServiceClient client = new EmployeeServiceClient();
+
+                Employee employee = null;
+
+                if (cmbEmployeeType.SelectedIndex == 0)
                 {
-                    Id = Convert.ToInt32(txtID.Text),
-                    Name = txtName.Text,
-                    Gender = txtGender.Text,
-                    DateOfBirth = dtpDateOfBirth.Value,
-                    Type = (EmployeeType)(((PickEmployeeType)cmbEmployeeType.SelectedItem).Codigo),
-                    AnnualSalary = Convert.ToInt32(txtAnualSalary.Text)
-                };
+                    employee = new FullTimeEmployee()
+                    {
+                        Id = Convert.ToInt32(txtID.Text),
+                        Name = txtName.Text,
+                        Gender = txtGender.Text,
+                        DateOfBirth = dtpDateOfBirth.Value,
+                        Type = (EmployeeType)(((PickEmployeeType)cmbEmployeeType.SelectedItem).Codigo),
+                        AnnualSalary = Convert.ToInt32(txtAnualSalary.Text)
+                    };
+                }
+                else
+                {
+                    employee = new PartTimeEmployee()
+                    {
+                        Id = Convert.ToInt32(txtID.Text),
+                        Name = txtName.Text,
+                        Gender = txtGender.Text,
+                        DateOfBirth = dtpDateOfBirth.Value,
+                        Type = (EmployeeType)(((PickEmployeeType)cmbEmployeeType.SelectedItem).Codigo),
+                        HourlyPay = Convert.ToInt32(txtHourlyPay.Text),
+                        HoursWorked = Convert.ToInt32(txtHoursWorked.Text)
+                    };
+
+                }
+
+                client.SaveEmployee(employee);
+                lblMessage.Text = "Employee saved!!!";
             }
-            else
+            catch (Exception ex) 
             {
-                employee = new PartTimeEmployee()
-                {
-                    Id = Convert.ToInt32(txtID.Text),
-                    Name = txtName.Text,
-                    Gender = txtGender.Text,
-                    DateOfBirth = dtpDateOfBirth.Value,
-                    Type = (EmployeeType)(((PickEmployeeType)cmbEmployeeType.SelectedItem).Codigo),
-                    HourlyPay = Convert.ToInt32(txtHourlyPay.Text),
-                    HoursWorked = Convert.ToInt32(txtHoursWorked.Text)
-                };
-
+                MessageBox.Show(ex.Message);
             }
 
-            client.SaveEmployee(employee);
-            lblMessage.Text = "Employee saved!!!";
         }
 
         private void cmbEmployeeType_SelectedIndexChanged(object sender, EventArgs e)

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TutorialWcf6.WinTestService.EmployeeServiceRef {
+namespace TutorialWcf6.WinTestService.ServiceReference2 {
     using System.Runtime.Serialization;
     using System;
     
@@ -17,8 +17,8 @@ namespace TutorialWcf6.WinTestService.EmployeeServiceRef {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Employee", Namespace="http://schemas.datacontract.org/2004/07/TutorialWcf6.BE")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TutorialWcf6.WinTestService.EmployeeServiceRef.FullTimeEmployee))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TutorialWcf6.WinTestService.EmployeeServiceRef.PartTimeEmployee))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TutorialWcf6.WinTestService.ServiceReference2.FullTimeEmployee))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TutorialWcf6.WinTestService.ServiceReference2.PartTimeEmployee))]
     public partial class Employee : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -37,7 +37,7 @@ namespace TutorialWcf6.WinTestService.EmployeeServiceRef {
         private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TutorialWcf6.WinTestService.EmployeeServiceRef.EmployeeType TypeField;
+        private TutorialWcf6.WinTestService.ServiceReference2.EmployeeType TypeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -102,7 +102,7 @@ namespace TutorialWcf6.WinTestService.EmployeeServiceRef {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TutorialWcf6.WinTestService.EmployeeServiceRef.EmployeeType Type {
+        public TutorialWcf6.WinTestService.ServiceReference2.EmployeeType Type {
             get {
                 return this.TypeField;
             }
@@ -128,7 +128,7 @@ namespace TutorialWcf6.WinTestService.EmployeeServiceRef {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="FullTimeEmployee", Namespace="http://schemas.datacontract.org/2004/07/TutorialWcf6.BE")]
     [System.SerializableAttribute()]
-    public partial class FullTimeEmployee : TutorialWcf6.WinTestService.EmployeeServiceRef.Employee {
+    public partial class FullTimeEmployee : TutorialWcf6.WinTestService.ServiceReference2.Employee {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int AnnualSalaryField;
@@ -151,7 +151,7 @@ namespace TutorialWcf6.WinTestService.EmployeeServiceRef {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="PartTimeEmployee", Namespace="http://schemas.datacontract.org/2004/07/TutorialWcf6.BE")]
     [System.SerializableAttribute()]
-    public partial class PartTimeEmployee : TutorialWcf6.WinTestService.EmployeeServiceRef.Employee {
+    public partial class PartTimeEmployee : TutorialWcf6.WinTestService.ServiceReference2.Employee {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int HourlyPayField;
@@ -198,29 +198,29 @@ namespace TutorialWcf6.WinTestService.EmployeeServiceRef {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="EmployeeServiceRef.IEmployeeService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference2.IEmployeeService")]
     public interface IEmployeeService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/GetEmployee", ReplyAction="http://tempuri.org/IEmployeeService/GetEmployeeResponse")]
-        TutorialWcf6.WinTestService.EmployeeServiceRef.Employee GetEmployee(int id);
+        TutorialWcf6.WinTestService.ServiceReference2.Employee GetEmployee(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/GetEmployee", ReplyAction="http://tempuri.org/IEmployeeService/GetEmployeeResponse")]
-        System.Threading.Tasks.Task<TutorialWcf6.WinTestService.EmployeeServiceRef.Employee> GetEmployeeAsync(int id);
+        System.Threading.Tasks.Task<TutorialWcf6.WinTestService.ServiceReference2.Employee> GetEmployeeAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/SaveEmployee", ReplyAction="http://tempuri.org/IEmployeeService/SaveEmployeeResponse")]
-        void SaveEmployee(TutorialWcf6.WinTestService.EmployeeServiceRef.Employee employee);
+        void SaveEmployee(TutorialWcf6.WinTestService.ServiceReference2.Employee employee);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/SaveEmployee", ReplyAction="http://tempuri.org/IEmployeeService/SaveEmployeeResponse")]
-        System.Threading.Tasks.Task SaveEmployeeAsync(TutorialWcf6.WinTestService.EmployeeServiceRef.Employee employee);
+        System.Threading.Tasks.Task SaveEmployeeAsync(TutorialWcf6.WinTestService.ServiceReference2.Employee employee);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IEmployeeServiceChannel : TutorialWcf6.WinTestService.EmployeeServiceRef.IEmployeeService, System.ServiceModel.IClientChannel {
+    public interface IEmployeeServiceChannel : TutorialWcf6.WinTestService.ServiceReference2.IEmployeeService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class EmployeeServiceClient : System.ServiceModel.ClientBase<TutorialWcf6.WinTestService.EmployeeServiceRef.IEmployeeService>, TutorialWcf6.WinTestService.EmployeeServiceRef.IEmployeeService {
+    public partial class EmployeeServiceClient : System.ServiceModel.ClientBase<TutorialWcf6.WinTestService.ServiceReference2.IEmployeeService>, TutorialWcf6.WinTestService.ServiceReference2.IEmployeeService {
         
         public EmployeeServiceClient() {
         }
@@ -241,19 +241,19 @@ namespace TutorialWcf6.WinTestService.EmployeeServiceRef {
                 base(binding, remoteAddress) {
         }
         
-        public TutorialWcf6.WinTestService.EmployeeServiceRef.Employee GetEmployee(int id) {
+        public TutorialWcf6.WinTestService.ServiceReference2.Employee GetEmployee(int id) {
             return base.Channel.GetEmployee(id);
         }
         
-        public System.Threading.Tasks.Task<TutorialWcf6.WinTestService.EmployeeServiceRef.Employee> GetEmployeeAsync(int id) {
+        public System.Threading.Tasks.Task<TutorialWcf6.WinTestService.ServiceReference2.Employee> GetEmployeeAsync(int id) {
             return base.Channel.GetEmployeeAsync(id);
         }
         
-        public void SaveEmployee(TutorialWcf6.WinTestService.EmployeeServiceRef.Employee employee) {
+        public void SaveEmployee(TutorialWcf6.WinTestService.ServiceReference2.Employee employee) {
             base.Channel.SaveEmployee(employee);
         }
         
-        public System.Threading.Tasks.Task SaveEmployeeAsync(TutorialWcf6.WinTestService.EmployeeServiceRef.Employee employee) {
+        public System.Threading.Tasks.Task SaveEmployeeAsync(TutorialWcf6.WinTestService.ServiceReference2.Employee employee) {
             return base.Channel.SaveEmployeeAsync(employee);
         }
     }

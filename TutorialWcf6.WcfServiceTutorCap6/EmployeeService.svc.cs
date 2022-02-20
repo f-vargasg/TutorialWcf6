@@ -17,7 +17,7 @@ namespace TutorialWcf6.WcfServiceTutorCap6
         public Employee GetEmployee(int id)
         {
             EmployeeBL employeeBL = new EmployeeBL();
-            Employee employee = employeeBL.GetEmployee(id);
+             Employee employee = employeeBL.GetEmployee(id);
             return employee;
         }
 

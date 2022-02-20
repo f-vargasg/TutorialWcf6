@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\EmployeeServiceRef\Reference.cs">
+    <Compile Include="Connected Services\ServiceReference2\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -77,17 +77,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Connected Services\EmployeeServiceRef\EmployeeService.wsdl" />
-    <None Include="Connected Services\EmployeeServiceRef\EmployeeService.xsd">
+    <None Include="Connected Services\ServiceReference2\EmployeeService.wsdl" />
+    <None Include="Connected Services\ServiceReference2\item.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\EmployeeServiceRef\EmployeeService1.xsd">
+    <None Include="Connected Services\ServiceReference2\item1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\EmployeeServiceRef\EmployeeService2.xsd">
+    <None Include="Connected Services\ServiceReference2\item2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\EmployeeServiceRef\TutorialWcf6.WinTestService.EmployeeServiceRef.Employee.datasource">
+    <None Include="Connected Services\ServiceReference2\TutorialWcf6.WinTestService.ServiceReference2.Employee.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
@@ -104,20 +104,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\EmployeeServiceRef\Reference.svcmap">
+    <None Include="Connected Services\ServiceReference2\item.disco" />
+    <None Include="Connected Services\ServiceReference2\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReference2\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReference2\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Connected Services\EmployeeServiceRef\configuration.svcinfo" />
-    <None Include="Connected Services\EmployeeServiceRef\configuration91.svcinfo" />
-    <None Include="Connected Services\EmployeeServiceRef\EmployeeService.disco" />
     <Content Include="TestSoftware2.ico" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\EmployeeServiceRef\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReference2\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -75,7 +75,7 @@ namespace TutorialWcf6.DL
                     using (DbCommand command = database.CreateStoredProcCommand("pck_TBLEMPLOYEE.Inserta", connection))
                     {
                         #region Parameters
-                        DbParameter param = database.CreateParameter("pid", DbType.Decimal, null);
+                        DbParameter param = database.CreateParameter("pid", DbType.Decimal, pParams.Id);
                         command.Parameters.Add(param);
                         param = database.CreateParameter("pname", DbType.String, pParams.Name);
                         command.Parameters.Add(param);
