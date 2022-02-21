@@ -11,12 +11,22 @@ namespace TutorialWcf6.MyServiceHost
     {
         static void Main(string[] args)
         {
-            using (var serviceHost = new ServiceHost(typeof(TutorialWcf6.WcfServiceTutorCap6.EmployeeService)))
+            try
             {
-                serviceHost.Open();
-                Console.WriteLine("Host Started @ " + DateTime.Now.ToString());
+                using (var serviceHost = new ServiceHost(typeof(TutorialWcf6.WcfServiceTutorCap6.EmployeeService)))
+                {
+                    serviceHost.Open();
+                    Console.WriteLine("Host Started @ " + DateTime.Now.ToString());
+                    Console.ReadLine();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message + "  "  + 
+                                  ex.StackTrace);
                 Console.ReadLine();
             }
+           
 
         }
     }
