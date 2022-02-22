@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TutorialWcf6.WinTestService.ServiceReference2;
+using TutorialWcf6.WinTestService.RefWcfService;
 
 namespace TutorialWcf6.WinTestService
 {
