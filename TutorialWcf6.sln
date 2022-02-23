@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutorialWcf6.WinTestService
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutorialWcf6.MyServiceHost", "TutorialWcf6.ServiceHost\TutorialWcf6.MyServiceHost.csproj", "{4E7AADE8-C9C5-484F-90C9-7E9F2B9D30C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutorialWcf6.WebClient", "TutorialWcf6.WebClient\TutorialWcf6.WebClient.csproj", "{B2E0D9B0-2939-46EF-80CB-150141EA20EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,10 @@ Global
 		{4E7AADE8-C9C5-484F-90C9-7E9F2B9D30C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E7AADE8-C9C5-484F-90C9-7E9F2B9D30C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E7AADE8-C9C5-484F-90C9-7E9F2B9D30C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2E0D9B0-2939-46EF-80CB-150141EA20EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2E0D9B0-2939-46EF-80CB-150141EA20EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2E0D9B0-2939-46EF-80CB-150141EA20EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2E0D9B0-2939-46EF-80CB-150141EA20EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
