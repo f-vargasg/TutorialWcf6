@@ -16,6 +16,7 @@ namespace TutorialWcf6.BE
 
     [KnownType(typeof(FullTimeEmployee))]
     [KnownType(typeof(PartTimeEmployee))]
+    [DataContract(Namespace = "http://fvgprinc.com/Employee")]
     public class Employee
     {
         [DataMember(Order = 1)]

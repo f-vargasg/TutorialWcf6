@@ -18,8 +18,25 @@ namespace TutorialWcf6.WebClient
         protected void btnGetEmployee_Click(object sender, EventArgs e)
         {
             EmployeeServiceClient client = new EmployeeServiceClient();
-
             Employee employee = client.GetEmployee(Convert.ToInt32(txtID.Text));
+
+            if (employee.Type == EmployeeType.FullTimeEmployee)
+            {
+                txtAnnualSalary.Text = ((FullTimeEmployee)employee).AnnualSalary.ToString();
+                trAnnualSalary.Visible = true;
+                trHourlPay.Visible = false;
+                trHoursWorked.Visible = false;
+            }
+            else
+            {
+                txtHourlyPay.Text = ((PartTimeEmployee)employee).HourlyPay.ToString();
+                txtHoursWorked.Text = ((PartTimeEmployee)employee).HoursWorked.ToString();
+                trAnnualSalary.Visible = false;
+                trHourlPay.Visible = true;
+                trHoursWorked.Visible = true;
+            }
+            ddlEmployeeType.SelectedValue = ((int)employee.Type).ToString();
+
             txtName.Text = employee.Name;
             txtGender.Text = employee.Gender;
             txtDateOfBirth.Text = employee.DateOfBirth.ToShortDateString();
@@ -29,12 +46,63 @@ namespace TutorialWcf6.WebClient
         protected void btnSave_Click(object sender, EventArgs e)
         {
             EmployeeServiceClient client = new EmployeeServiceClient();
-            Employee employee = new Employee();
-            employee.Name = txtName.Text; 
-            employee.Gender = txtGender.Text;   
-            employee.DateOfBirth = Convert.ToDateTime(txtDateOfBirth.Text);
-            client.SaveEmployee(employee);
-            lblMessage.Text = "Employee Saved!!";
+            Employee employee = null;
+
+            if (((EmployeeType)Convert.ToInt32(ddlEmployeeType.SelectedValue)) == EmployeeType.FullTimeEmployee)
+            {
+                employee = new FullTimeEmployee
+                {
+                    Id = Convert.ToInt32(txtID.Text),
+                    Name = txtName.Text,
+                    Gender = txtGender.Text,
+                    DateOfBirth = Convert.ToDateTime(txtDateOfBirth.Text),
+                    Type = EmployeeType.FullTimeEmployee,
+                    AnnualSalary = Convert.ToInt32(txtAnnualSalary.Text),
+                };
+                client.SaveEmployee(employee);
+                lblMessage.Text = "Employee saved";
+            }
+            else if (((EmployeeType)Convert.ToInt32(ddlEmployeeType.SelectedValue)) == EmployeeType.PartTimeEmployee)
+            {
+                employee = new PartTimeEmployee
+                {
+                    Id = Convert.ToInt32(txtID.Text),
+                    Name = txtName.Text,
+                    Gender = txtGender.Text,
+                    DateOfBirth = Convert.ToDateTime(txtDateOfBirth.Text),
+                    Type = EmployeeType.PartTimeEmployee,
+                    HourlyPay = Convert.ToInt32(txtHourlyPay.Text),
+                    HoursWorked = Convert.ToInt32(txtHoursWorked.Text)
+                };
+                client.SaveEmployee(employee);
+                lblMessage.Text = "Employee saved";
+            }
+            else
+            {
+                lblMessage.Text = "Please Select Employee Type";
+            }
+        }
+
+        protected void ddlEmployeeType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlEmployeeType.SelectedValue == "-1")
+            {
+                trAnnualSalary.Visible = false;
+                trHourlPay.Visible = false;
+                trHoursWorked.Visible = false;
+            }
+            else if (ddlEmployeeType.SelectedValue == "1")
+            {
+                trAnnualSalary.Visible = true;
+                trHourlPay.Visible = false;
+                trHoursWorked.Visible = false;
+            }
+            else
+            {
+                trAnnualSalary.Visible = false;
+                trHourlPay.Visible = true;
+                trHoursWorked.Visible = true;
+            }
         }
     }
 }
