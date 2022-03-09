@@ -10,181 +10,7 @@
 
 namespace TutorialWcf6.WebClient.EmployeeService {
     using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Employee", Namespace="http://fvgprinc.com/Employee")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TutorialWcf6.WebClient.EmployeeService.FullTimeEmployee))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TutorialWcf6.WebClient.EmployeeService.PartTimeEmployee))]
-    public partial class Employee : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string GenderField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DateOfBirthField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TutorialWcf6.WebClient.EmployeeService.EmployeeType TypeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public string Gender {
-            get {
-                return this.GenderField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.GenderField, value) != true)) {
-                    this.GenderField = value;
-                    this.RaisePropertyChanged("Gender");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public System.DateTime DateOfBirth {
-            get {
-                return this.DateOfBirthField;
-            }
-            set {
-                if ((this.DateOfBirthField.Equals(value) != true)) {
-                    this.DateOfBirthField = value;
-                    this.RaisePropertyChanged("DateOfBirth");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TutorialWcf6.WebClient.EmployeeService.EmployeeType Type {
-            get {
-                return this.TypeField;
-            }
-            set {
-                if ((this.TypeField.Equals(value) != true)) {
-                    this.TypeField = value;
-                    this.RaisePropertyChanged("Type");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FullTimeEmployee", Namespace="http://schemas.datacontract.org/2004/07/TutorialWcf6.BE")]
-    [System.SerializableAttribute()]
-    public partial class FullTimeEmployee : TutorialWcf6.WebClient.EmployeeService.Employee {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int AnnualSalaryField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int AnnualSalary {
-            get {
-                return this.AnnualSalaryField;
-            }
-            set {
-                if ((this.AnnualSalaryField.Equals(value) != true)) {
-                    this.AnnualSalaryField = value;
-                    this.RaisePropertyChanged("AnnualSalary");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PartTimeEmployee", Namespace="http://schemas.datacontract.org/2004/07/TutorialWcf6.BE")]
-    [System.SerializableAttribute()]
-    public partial class PartTimeEmployee : TutorialWcf6.WebClient.EmployeeService.Employee {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int HourlyPayField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int HoursWorkedField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int HourlyPay {
-            get {
-                return this.HourlyPayField;
-            }
-            set {
-                if ((this.HourlyPayField.Equals(value) != true)) {
-                    this.HourlyPayField = value;
-                    this.RaisePropertyChanged("HourlyPay");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int HoursWorked {
-            get {
-                return this.HoursWorkedField;
-            }
-            set {
-                if ((this.HoursWorkedField.Equals(value) != true)) {
-                    this.HoursWorkedField = value;
-                    this.RaisePropertyChanged("HoursWorked");
-                }
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EmployeeType", Namespace="http://schemas.datacontract.org/2004/07/TutorialWcf6.BE")]
@@ -202,16 +28,92 @@ namespace TutorialWcf6.WebClient.EmployeeService {
     public interface IEmployeeService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/GetEmployee", ReplyAction="http://tempuri.org/IEmployeeService/GetEmployeeResponse")]
-        TutorialWcf6.WebClient.EmployeeService.Employee GetEmployee(int id);
+        TutorialWcf6.WebClient.EmployeeService.EmployeeInfo GetEmployee(TutorialWcf6.WebClient.EmployeeService.EmployeeRequest request);
         
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/GetEmployee", ReplyAction="http://tempuri.org/IEmployeeService/GetEmployeeResponse")]
-        System.Threading.Tasks.Task<TutorialWcf6.WebClient.EmployeeService.Employee> GetEmployeeAsync(int id);
+        System.Threading.Tasks.Task<TutorialWcf6.WebClient.EmployeeService.EmployeeInfo> GetEmployeeAsync(TutorialWcf6.WebClient.EmployeeService.EmployeeRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que la operación SaveEmployee no es RPC ni está encapsulada en un documento.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/SaveEmployee", ReplyAction="http://tempuri.org/IEmployeeService/SaveEmployeeResponse")]
+        TutorialWcf6.WebClient.EmployeeService.SaveEmployeeResponse SaveEmployee(TutorialWcf6.WebClient.EmployeeService.EmployeeInfo request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/SaveEmployee", ReplyAction="http://tempuri.org/IEmployeeService/SaveEmployeeResponse")]
-        void SaveEmployee(TutorialWcf6.WebClient.EmployeeService.Employee employee);
+        System.Threading.Tasks.Task<TutorialWcf6.WebClient.EmployeeService.SaveEmployeeResponse> SaveEmployeeAsync(TutorialWcf6.WebClient.EmployeeService.EmployeeInfo request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="EmployeeRequestObject", WrapperNamespace="http://MyCompany.com/Employee", IsWrapped=true)]
+    public partial class EmployeeRequest {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/SaveEmployee", ReplyAction="http://tempuri.org/IEmployeeService/SaveEmployeeResponse")]
-        System.Threading.Tasks.Task SaveEmployeeAsync(TutorialWcf6.WebClient.EmployeeService.Employee employee);
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://MyCompany.com/Employee")]
+        public string LicenseKey;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://MyCompany.com/Employee", Order=0)]
+        public int EmployeeId;
+        
+        public EmployeeRequest() {
+        }
+        
+        public EmployeeRequest(string LicenseKey, int EmployeeId) {
+            this.LicenseKey = LicenseKey;
+            this.EmployeeId = EmployeeId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="EmployeeInfoObject", WrapperNamespace="http://MyCompany.com/Employee", IsWrapped=true)]
+    public partial class EmployeeInfo {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://MyCompany.com/Employee", Order=0)]
+        public int Id;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://MyCompany.com/Employee", Order=1)]
+        public string Name;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://MyCompany.com/Employee", Order=2)]
+        public string Gender;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://MyCompany.com/Employee", Order=3)]
+        public System.DateTime DOB;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://MyCompany.com/Employee", Order=4)]
+        public TutorialWcf6.WebClient.EmployeeService.EmployeeType Type;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://MyCompany.com/Employee", Order=5)]
+        public int AnnualSalary;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://MyCompany.com/Employee", Order=6)]
+        public int HourlyPay;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://MyCompany.com/Employee", Order=7)]
+        public int HoursWorked;
+        
+        public EmployeeInfo() {
+        }
+        
+        public EmployeeInfo(int Id, string Name, string Gender, System.DateTime DOB, TutorialWcf6.WebClient.EmployeeService.EmployeeType Type, int AnnualSalary, int HourlyPay, int HoursWorked) {
+            this.Id = Id;
+            this.Name = Name;
+            this.Gender = Gender;
+            this.DOB = DOB;
+            this.Type = Type;
+            this.AnnualSalary = AnnualSalary;
+            this.HourlyPay = HourlyPay;
+            this.HoursWorked = HoursWorked;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SaveEmployeeResponse {
+        
+        public SaveEmployeeResponse() {
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -241,20 +143,64 @@ namespace TutorialWcf6.WebClient.EmployeeService {
                 base(binding, remoteAddress) {
         }
         
-        public TutorialWcf6.WebClient.EmployeeService.Employee GetEmployee(int id) {
-            return base.Channel.GetEmployee(id);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TutorialWcf6.WebClient.EmployeeService.EmployeeInfo TutorialWcf6.WebClient.EmployeeService.IEmployeeService.GetEmployee(TutorialWcf6.WebClient.EmployeeService.EmployeeRequest request) {
+            return base.Channel.GetEmployee(request);
         }
         
-        public System.Threading.Tasks.Task<TutorialWcf6.WebClient.EmployeeService.Employee> GetEmployeeAsync(int id) {
-            return base.Channel.GetEmployeeAsync(id);
+        public int GetEmployee(string LicenseKey, int EmployeeId, out string Name, out string Gender, out System.DateTime DOB, out TutorialWcf6.WebClient.EmployeeService.EmployeeType Type, out int AnnualSalary, out int HourlyPay, out int HoursWorked) {
+            TutorialWcf6.WebClient.EmployeeService.EmployeeRequest inValue = new TutorialWcf6.WebClient.EmployeeService.EmployeeRequest();
+            inValue.LicenseKey = LicenseKey;
+            inValue.EmployeeId = EmployeeId;
+            TutorialWcf6.WebClient.EmployeeService.EmployeeInfo retVal = ((TutorialWcf6.WebClient.EmployeeService.IEmployeeService)(this)).GetEmployee(inValue);
+            Name = retVal.Name;
+            Gender = retVal.Gender;
+            DOB = retVal.DOB;
+            Type = retVal.Type;
+            AnnualSalary = retVal.AnnualSalary;
+            HourlyPay = retVal.HourlyPay;
+            HoursWorked = retVal.HoursWorked;
+            return retVal.Id;
         }
         
-        public void SaveEmployee(TutorialWcf6.WebClient.EmployeeService.Employee employee) {
-            base.Channel.SaveEmployee(employee);
+        public System.Threading.Tasks.Task<TutorialWcf6.WebClient.EmployeeService.EmployeeInfo> GetEmployeeAsync(TutorialWcf6.WebClient.EmployeeService.EmployeeRequest request) {
+            return base.Channel.GetEmployeeAsync(request);
         }
         
-        public System.Threading.Tasks.Task SaveEmployeeAsync(TutorialWcf6.WebClient.EmployeeService.Employee employee) {
-            return base.Channel.SaveEmployeeAsync(employee);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TutorialWcf6.WebClient.EmployeeService.SaveEmployeeResponse TutorialWcf6.WebClient.EmployeeService.IEmployeeService.SaveEmployee(TutorialWcf6.WebClient.EmployeeService.EmployeeInfo request) {
+            return base.Channel.SaveEmployee(request);
+        }
+        
+        public void SaveEmployee(int Id, string Name, string Gender, System.DateTime DOB, TutorialWcf6.WebClient.EmployeeService.EmployeeType Type, int AnnualSalary, int HourlyPay, int HoursWorked) {
+            TutorialWcf6.WebClient.EmployeeService.EmployeeInfo inValue = new TutorialWcf6.WebClient.EmployeeService.EmployeeInfo();
+            inValue.Id = Id;
+            inValue.Name = Name;
+            inValue.Gender = Gender;
+            inValue.DOB = DOB;
+            inValue.Type = Type;
+            inValue.AnnualSalary = AnnualSalary;
+            inValue.HourlyPay = HourlyPay;
+            inValue.HoursWorked = HoursWorked;
+            TutorialWcf6.WebClient.EmployeeService.SaveEmployeeResponse retVal = ((TutorialWcf6.WebClient.EmployeeService.IEmployeeService)(this)).SaveEmployee(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TutorialWcf6.WebClient.EmployeeService.SaveEmployeeResponse> TutorialWcf6.WebClient.EmployeeService.IEmployeeService.SaveEmployeeAsync(TutorialWcf6.WebClient.EmployeeService.EmployeeInfo request) {
+            return base.Channel.SaveEmployeeAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TutorialWcf6.WebClient.EmployeeService.SaveEmployeeResponse> SaveEmployeeAsync(int Id, string Name, string Gender, System.DateTime DOB, TutorialWcf6.WebClient.EmployeeService.EmployeeType Type, int AnnualSalary, int HourlyPay, int HoursWorked) {
+            TutorialWcf6.WebClient.EmployeeService.EmployeeInfo inValue = new TutorialWcf6.WebClient.EmployeeService.EmployeeInfo();
+            inValue.Id = Id;
+            inValue.Name = Name;
+            inValue.Gender = Gender;
+            inValue.DOB = DOB;
+            inValue.Type = Type;
+            inValue.AnnualSalary = AnnualSalary;
+            inValue.HourlyPay = HourlyPay;
+            inValue.HoursWorked = HoursWorked;
+            return ((TutorialWcf6.WebClient.EmployeeService.IEmployeeService)(this)).SaveEmployeeAsync(inValue);
         }
     }
 }

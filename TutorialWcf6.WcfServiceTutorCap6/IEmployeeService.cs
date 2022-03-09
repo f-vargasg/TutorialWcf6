@@ -15,10 +15,10 @@ namespace TutorialWcf6.WcfServiceTutorCap6
     {
 
         [OperationContract]
-        Employee GetEmployee(int id);
+        EmployeeInfo GetEmployee(EmployeeRequest request);
 
         [OperationContract]
-        void SaveEmployee(Employee employee);
+        void SaveEmployee(EmployeeInfo employee);
 
 
     }
